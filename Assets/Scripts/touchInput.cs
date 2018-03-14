@@ -11,13 +11,14 @@ public class touchInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		if (Physics.Raycast (ray, 100)) {
-			print ("Hit something!");
-		}
+		
 	}
 
 	void OnMouseDown(){
-		
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		if (Physics.Raycast (ray,hit, 100)) {
+			print ("Hit something!");
+		}
 	}
 }
