@@ -19,22 +19,27 @@ public class fruitGenerator : MonoBehaviour {
 		fruits = new GameObject[gridSize,gridSize];
 	}
 
+	void instantiateFruit(GameObject fruitType, int x, int y) {
+		fruits[x, y] = Instantiate (fruitType, new Vector3 (x * width, y * height, 0), Quaternion.identity);
+		fruits [x, y].AddComponent<touchInput>();
+	}
+
 	// Use this for initialization
 	void Start () {
 		for(int x = 0;x<gridSize;x++){
 			for(int y = 0; y<gridSize; y++){
 				switch(Random.Range (0, 4)){
 				case 0:
-					fruits[x,y] = Instantiate (banana, new Vector3 (x * width, y * height, 0), Quaternion.identity);
+					instantiateFruit (banana, x, y);
 					break;
 				case 1:
-					fruits[x,y] = Instantiate (apple, new Vector3 (x * width, y * height, 0), Quaternion.identity);
+					instantiateFruit (apple, x, y);
 					break;
 				case 2:
-					fruits[x,y] = Instantiate (mango, new Vector3 (x * width, y * height, 0), Quaternion.identity);
+					instantiateFruit (mango, x, y);
 					break;
 				default:
-					fruits[x,y] = Instantiate (lemon, new Vector3 (x * width, y * height, 0), Quaternion.identity);
+					instantiateFruit (lemon, x, y);
 					break;
 				}
 			}
