@@ -8,7 +8,8 @@ public class fruitGenerator : MonoBehaviour {
 	public int height = 1;
 	public int width = 1;
 
-	private GameObject[,] fruits;
+	//private GameObject[,] fruits;
+	private FrutaDoGrid[,] fruits;
 
 	public GameObject banana;
 	public GameObject apple;
@@ -16,13 +17,25 @@ public class fruitGenerator : MonoBehaviour {
 	public GameObject lemon;
 
 	void Awake(){
-		fruits = new GameObject[gridSize,gridSize];
+		fruits = new FrutaDoGrid[gridSize,gridSize];
 	}
 
 	// Use this for initialization
 	void Start () {
+
+		GameObject[] arrayDePrefabsFrutas = {banana, apple, mango, lemon} ; //novo
+
 		for(int x = 0;x<gridSize;x++){
 			for(int y = 0; y<gridSize; y++){
+
+				//as próximas 4 linhas visam substituir o switch abaixo. Ainda não está funcionando. Não pode usar new para instanciar monobehaviour
+				int numeroAleatorio = Random.Range (0, 4);
+				Vector3 position = new Vector3 (x * width, y * height, 0);
+				Quaternion rotacao = Quaternion.identity;
+				print (arrayDePrefabsFrutas);
+				fruits [x, y] = Instantiate (new FrutaDoGrid (x, y, arrayDePrefabsFrutas [numeroAleatorio]), position, rotacao);
+
+				/*
 				switch(Random.Range (0, 4)){
 				case 0:
 					fruits[x,y] = Instantiate (banana, new Vector3 (x * width, y * height, 0), Quaternion.identity);
@@ -37,6 +50,7 @@ public class fruitGenerator : MonoBehaviour {
 					fruits[x,y] = Instantiate (lemon, new Vector3 (x * width, y * height, 0), Quaternion.identity);
 					break;
 				}
+				*/
 			}
 		}
 	}
