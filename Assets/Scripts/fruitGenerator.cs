@@ -38,7 +38,7 @@ public class fruitGenerator : MonoBehaviour {
 					break;
 				}
 				//comentario adicinado
-				//outros
+				//asda outros
 			}
 		}
 	}
