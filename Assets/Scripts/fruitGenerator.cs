@@ -57,6 +57,6 @@ public class fruitGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		transform.Rotate (15f, 16f, 50f);
 	}
 }
