@@ -37,6 +37,7 @@ public class fruitGenerator : MonoBehaviour {
 					fruits[x,y] = Instantiate (lemon, new Vector3 (x * width, y * height, 0), Quaternion.identity);
 					break;
 				}
+				//comentario adicinado
 			}
 		}
 	}
