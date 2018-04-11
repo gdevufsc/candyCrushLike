@@ -8,27 +8,62 @@ public class fruitGenerator : MonoBehaviour {
 	public int height = 1;
 	public int width = 1;
 
-	private GameObject[,] fruits;
+	//private GameObject[,] fruits;
+	//private FrutaDoGrid[,] fruits;
 
 	public GameObject banana;
 	public GameObject apple;
 	public GameObject mango;
 	public GameObject lemon;
+	public GameObject GridFather;
+	GameObject[] arrayDePrefabsFrutas = new GameObject[4];
+	GameObject[,] GridDeFrutas;
 
 	void Awake(){
-		fruits = new GameObject[gridSize,gridSize];
+		GridDeFrutas = new GameObject[gridSize,gridSize];
 	}
 
 	// Use this for initialization
 	void Start () {
-		for(int x = 0;x<gridSize;x++){
-			for(int y = 0; y<gridSize; y++){
+
+		GameObject[] arrayDePrefabsFrutas = {banana, apple, mango, lemon} ; //novo
+
+		//as próximas linhas visam substituir o switch abaixo.
+		for (int x = 0; x < gridSize; x++) {
+			for (int y = 0; y < gridSize; y++) {
+
+				int numeroAleatorio = Random.Range (0, arrayDePrefabsFrutas.Length);
+				Vector3 position = new Vector3 (x * width, y * height, 0);
+				Quaternion rotacao = Quaternion.identity;
+				GridDeFrutas [x, y] = Instantiate (arrayDePrefabsFrutas [numeroAleatorio], position, rotacao);
+				GridDeFrutas [x, y].transform.SetParent (GridFather.GetComponent<Transform>());
+			}
+		}
+
+       // print(GridDeFrutas[0,0]);
+/*
+        for (int i=0; i<5; i++)
+        {
+           print(GridDeFrutas[i, 0]);
+            if (GridDeFrutas[i,0].GetComponent<Fruta>().tipoDeFruta == "Apple")
+            {
+                print("ok");
+                //    GridDeFrutas[i - 1, 0] = null;
+               // if (i > 0)
+               // {
+                    Destroy(GridDeFrutas[i - 1, 0]);
+                    GridDeFrutas[i - 1, 0] = Instantiate(arrayDePrefabsFrutas[0], new Vector3((i-1) * width, 0, 0), Quaternion.identity);
+                //}
+            }
+        }
+ */
+				/*
 				switch(Random.Range (0, 4)){
 				case 0:
 					fruits[x,y] = Instantiate (banana, new Vector3 (x * width, y * height, 0), Quaternion.identity);
 					break;
 				case 1:
-					fruits[x,y] = Instantiate (apple, new Vector3 (x * width, y * height, 0), Quaternion.identity);
+							fruits[x,y] = Instantiate (apple, new Vector3 (x * width, y * height, 0), Quaternion.identity);
 					break;
 				case 2:
 					fruits[x,y] = Instantiate (mango, new Vector3 (x * width, y * height, 0), Quaternion.identity);
@@ -36,11 +71,6 @@ public class fruitGenerator : MonoBehaviour {
 				default:
 					fruits[x,y] = Instantiate (lemon, new Vector3 (x * width, y * height, 0), Quaternion.identity);
 					break;
-				}
-				//comentario adicinado
-				//asda outros
-			}
-		}
-	}
-
+				}*/
+}
 }
