@@ -42,9 +42,5 @@ public class fruitGenerator : MonoBehaviour {
 			}
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
