@@ -39,6 +39,24 @@ public class fruitGenerator : MonoBehaviour {
 				GridDeFrutas [x, y].transform.SetParent (GridFather.GetComponent<Transform>());
 			}
 		}
+
+       // print(GridDeFrutas[0,0]);
+/*
+        for (int i=0; i<5; i++)
+        {
+           print(GridDeFrutas[i, 0]);
+            if (GridDeFrutas[i,0].GetComponent<Fruta>().tipoDeFruta == "Apple")
+            {
+                print("ok");
+                //    GridDeFrutas[i - 1, 0] = null;
+               // if (i > 0)
+               // {
+                    Destroy(GridDeFrutas[i - 1, 0]);
+                    GridDeFrutas[i - 1, 0] = Instantiate(arrayDePrefabsFrutas[0], new Vector3((i-1) * width, 0, 0), Quaternion.identity);
+                //}
+            }
+        }
+ */
 				/*
 				switch(Random.Range (0, 4)){
 				case 0:

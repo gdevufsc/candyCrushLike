@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Fruta : MonoBehaviour {
 
+    public string tipoDeFruta;
+
 	// Use this for initialization
 	void Start () {
 		

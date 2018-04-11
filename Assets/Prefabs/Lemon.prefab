@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4580607813388964}
   - component: {fileID: 65005775426433206}
+  - component: {fileID: 114669364366634126}
   m_Layer: 0
   m_Name: Lemon
   m_TagString: lemon
@@ -37,6 +38,7 @@ GameObject:
   - component: {fileID: 4881812144402550}
   - component: {fileID: 33946706997848290}
   - component: {fileID: 23081596168094354}
+  - component: {fileID: 114264837218021830}
   m_Layer: 0
   m_Name: Lemon v3000
   m_TagString: Untagged
@@ -122,3 +124,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114264837218021830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631950255773140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b922db56667d7bf448ab782b1b76af98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoDeFruta: 
+--- !u!114 &114669364366634126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363735000284710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b922db56667d7bf448ab782b1b76af98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoDeFruta: Lemon

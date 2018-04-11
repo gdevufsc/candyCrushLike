@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4948064165134576}
   - component: {fileID: 65164940131916336}
   - component: {fileID: 65082320333687676}
-  - component: {fileID: 114400426387845546}
+  - component: {fileID: 114011116001621652}
   m_Layer: 0
   m_Name: Apple
   m_TagString: apple
@@ -192,6 +192,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: -0.3, z: 0.05}
+--- !u!114 &114011116001621652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606958278562440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b922db56667d7bf448ab782b1b76af98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoDeFruta: Apple
 --- !u!114 &114098873048659042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,7 +270,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114400426387845546}
+      - m_Target: {fileID: 0}
         m_MethodName: TestaTrigger
         m_Mode: 1
         m_Arguments:
@@ -271,17 +283,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114400426387845546
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1606958278562440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d36ef1252d11e546807f6f08febc32c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114521542650239330
 MonoBehaviour:
   m_ObjectHideFlags: 1
