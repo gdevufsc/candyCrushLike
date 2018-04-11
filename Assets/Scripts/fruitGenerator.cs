@@ -71,10 +71,6 @@ public class fruitGenerator : MonoBehaviour {
 				default:
 					fruits[x,y] = Instantiate (lemon, new Vector3 (x * width, y * height, 0), Quaternion.identity);
 					break;
-				}
-				*/
-			
-		
-	}
-
+				}*/
+}
 }
