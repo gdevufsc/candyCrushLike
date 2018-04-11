@@ -209,9 +209,41 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1606958278562440, guid: a32be90302516a842b816ea4c665a363, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a32be90302516a842b816ea4c665a363, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &896816493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 896816494}
+  m_Layer: 0
+  m_Name: GridFather
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &896816494
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 896816493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &993894425
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +369,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -360,7 +392,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1124579734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 2, z: -50}
+  m_LocalPosition: {x: 5.87, y: 5.67, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -413,6 +445,7 @@ MonoBehaviour:
   apple: {fileID: 1606958278562440, guid: a32be90302516a842b816ea4c665a363, type: 2}
   mango: {fileID: 1819146078981918, guid: 4f30a37c4805ec04a80fa2ae982a8462, type: 2}
   lemon: {fileID: 1363735000284710, guid: 9c0b885b7e9b2874f99e56e99972dce5, type: 2}
+  GridFather: {fileID: 896816493}
 --- !u!1 &1771281467
 GameObject:
   m_ObjectHideFlags: 0

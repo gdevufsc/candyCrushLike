@@ -9,15 +9,18 @@ public class fruitGenerator : MonoBehaviour {
 	public int width = 1;
 
 	//private GameObject[,] fruits;
-	private FrutaDoGrid[,] fruits;
+	//private FrutaDoGrid[,] fruits;
 
 	public GameObject banana;
 	public GameObject apple;
 	public GameObject mango;
 	public GameObject lemon;
+	public GameObject GridFather;
+	GameObject[] arrayDePrefabsFrutas = new GameObject[4];
+	GameObject[,] GridDeFrutas;
 
 	void Awake(){
-		fruits = new FrutaDoGrid[gridSize,gridSize];
+		GridDeFrutas = new GameObject[gridSize,gridSize];
 	}
 
 	// Use this for initialization
@@ -25,23 +28,24 @@ public class fruitGenerator : MonoBehaviour {
 
 		GameObject[] arrayDePrefabsFrutas = {banana, apple, mango, lemon} ; //novo
 
-		for(int x = 0;x<gridSize;x++){
-			for(int y = 0; y<gridSize; y++){
+		//as próximas linhas visam substituir o switch abaixo.
+		for (int x = 0; x < gridSize; x++) {
+			for (int y = 0; y < gridSize; y++) {
 
-				//as próximas 4 linhas visam substituir o switch abaixo. Ainda não está funcionando. Não pode usar new para instanciar monobehaviour
-				int numeroAleatorio = Random.Range (0, 4);
+				int numeroAleatorio = Random.Range (0, arrayDePrefabsFrutas.Length);
 				Vector3 position = new Vector3 (x * width, y * height, 0);
 				Quaternion rotacao = Quaternion.identity;
-				print (arrayDePrefabsFrutas);
-				fruits [x, y] = Instantiate (new FrutaDoGrid (x, y, arrayDePrefabsFrutas [numeroAleatorio]), position, rotacao);
-
+				GridDeFrutas [x, y] = Instantiate (arrayDePrefabsFrutas [numeroAleatorio], position, rotacao);
+				GridDeFrutas [x, y].transform.SetParent (GridFather.GetComponent<Transform>());
+			}
+		}
 				/*
 				switch(Random.Range (0, 4)){
 				case 0:
 					fruits[x,y] = Instantiate (banana, new Vector3 (x * width, y * height, 0), Quaternion.identity);
 					break;
 				case 1:
-					fruits[x,y] = Instantiate (apple, new Vector3 (x * width, y * height, 0), Quaternion.identity);
+							fruits[x,y] = Instantiate (apple, new Vector3 (x * width, y * height, 0), Quaternion.identity);
 					break;
 				case 2:
 					fruits[x,y] = Instantiate (mango, new Vector3 (x * width, y * height, 0), Quaternion.identity);
@@ -51,12 +55,8 @@ public class fruitGenerator : MonoBehaviour {
 					break;
 				}
 				*/
-			}
-		}
+			
+		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		transform.Rotate (15f, 16f, 50f);
-	}
+
 }
