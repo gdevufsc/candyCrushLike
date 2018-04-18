@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Fruta : MonoBehaviour {
 
-    public string tipoDeFruta;
-
+    //public string tipoDeFruta;
+	public enum FRUITTYPE
+	{
+		APPLE, BANANA, LEMON, MANGO
+	}
+	public FRUITTYPE type;
 	// Use this for initialization
 	void Start () {
 		
